@@ -19,13 +19,31 @@ return new class extends Migration
             $table->integer('class')->nullable();
             $table->timestamps();
         });
+
+
+        Schema::create('teachers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('subject')->nullable();
+            $table->string('education')->nullable();
+            $table->boolean('is_class_teacher')->nullable();
+            $table->timestamps();
+        });
     }
+
+
+
+
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
+        Schema::dropIfExists('teachers');
+
         Schema::dropIfExists('students');
     }
 };

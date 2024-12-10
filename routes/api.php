@@ -9,7 +9,11 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('student',[StudentController::class, 'index']);
-Route::get('add-student',[StudentController::class, 'addStudent']);
-Route::patch('update-student/{id}',[StudentController::class, 'editStudent']);
-Route::delete('remove-student/{id}',[StudentController::class, 'deleteStudent']);
+Route::get('student', [StudentController::class, 'index']);
+Route::get('add-student', [StudentController::class, 'addStudent']);
+Route::patch('update-student/{id}', [StudentController::class, 'editStudent']);
+Route::delete('remove-student/{id}', [StudentController::class, 'deleteStudent']);
+
+
+
+require __DIR__ . '/teacher.php';

@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "851a5d4b-d087-4893-809c-2f7e3bb8c7f3",
+		"name": "Test laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30370756",
+		"_collection_link": "https://orange-crescent-704118.postman.co/workspace/My-Workspace~4545a77d-eafe-450e-8f6d-949323f18b7b/collection/30370756-851a5d4b-d087-4893-809c-2f7e3bb8c7f3?action=share&source=collection_link&creator=30370756"
+	},
+	"item": [
+		{
+			"name": "teachers",
+			"item": [
+				{
+					"name": "Add new Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"{{$randomNamePrefix}}\",\r\n    \"subject\":\"{{$randomLoremText}}\",\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"education\":\"{{$randomLoremText}}\",\r\n    \"is_class_teacher\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/teacher/add-new-teacher",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"teacher",
+								"add-new-teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update teacher",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sihab\",\r\n    \"email\":\"sihab@gmail.com\",\r\n    \"education\":\"HSC\",\r\n    \"subject\":\"Humanities\",\r\n    \"is_class_teacher\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/teacher/update-teacher/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"teacher",
+								"update-teacher",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/student",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/teacher/get-single-teacher/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"teacher",
+								"get-single-teacher",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"{{$randomNamePrefix}}\",\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"role_number\":54545,\r\n    \"class\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/add-student",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"add-student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update by Patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"{{$randomNamePrefix}}\",\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"role_number\":181,\r\n    \"class\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/update-student/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"update-student",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete api",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"{{$randomNamePrefix}}\",\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"role_number\":181,\r\n    \"class\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/api/remove-student/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"remove-student",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "http://test-basic-rest-api.test",
+			"type": "string"
+		}
+	]
+}
